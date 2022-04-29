@@ -1,118 +1,71 @@
-############ CONTROL STRUCTURES #########################################
-# write a programme to check whether a number is positive.
-x <- 5
-if(x >= 0){
-  print('Positive Number')
+#NAME: OTIM WILLIAM GERISON
+#REG NO: S19B23/421
+#ACCESS NUMBER: A87886
+
+#Number One
+#i).
+seq(from = 1, to = 12 , by =0.5)
+
+#ii).
+seq(from = 1, to = 10)^3
+
+#iii).
+d <- seq( from = 1, to = 100)
+g <- (1/(d)*(-1)^(d-1))
+g
+
+#iv).
+C <- c(seq(1,49))
+for(i in C)
+{
+  if(i%%2 == 0) #Checking for even numbers
+  {
+    C[C==i] <- 0 #if it is even, replace with 0
+  }
 }
-print('End of Program')
+C
 
-x <- -2
-if(x >= 0){
-  print('Positive Number')
-}
-print('End of Program')
+#v).
+?cumsum
+g <- seq(1:20)
+cumsum(g)
 
-# we introduce in the else function
-x <- -2
-if(x >= 0){
-  print('Positive Number')
-} else{
-  print('Negative Number')
-}
-print('End of Program')
+#vi).
+?seq
+g<-seq(1:10)
+g <- rep(g, 1:10) #first argument takes range while second one takes repeating format
+g
 
-#let x be 3
-x <- 3
-if(x > 0){
-  print('Positive Number')
-} else if (x < 0){
-  print('Negative Number')
-} else {
-  print('Zero Number')
-}
-print('End of Program')
+#Number 2
+#a).
+library(dplyr)
+Title <- c("Spider Man: Far From Home", "Amandla", "The Privilege")
+Director <- c("Jon Watts", "Nerina de Jager", "Katharina Schöde")
+Year <- c(2021, 2022, 2022)
+Country <- c("United States of America","South Africa","Germany")
 
-#let x be -4
-x <- -4
-if(x > 0){
-  print('Positive Number')
-} else if (x < 0){
-  print('Negative Number')
-} else {
-  print('Zero Number')
-}
-print('End of Program')
+Movies1 <- data.frame(Title,Director,Year,Country)
+View(Movies1)
 
-#let x be 0
-x <- 0
-if(x > 0){
-  print('Positive Number')
-} else if (x < 0){
-  print('Negative Number')
-} else {
-  print('Zero Number')
-}
-print('End of Program')
+#b).
+Title <- c("The Feast")
+Director <- c("Lee Haven Joness")
+Year <- c(2022)
+Country <- c("England")
 
-# Let us now look at ifelse()  function
-x <- 5
-ifelse(x>=0,'Positive Number','Negative Number')
+Movies2 <- data.frame(Title,Director,Year,Country)
+View(Movies2)
 
-# Suppose we assign x to be -4
-x<- -4
-ifelse(x>=0, 'Positive Number', 'Negative Number')
+#c).
+data("Movies")
+?rbind
+Movies <- rbind(Movies1,Movies2)
+View(Movies)
 
-# write a programme to check whether the number is even or odd
-x <- 5
-ifelse(x%%2 == 0,'Even Number','Odd Number')
+#d).
+?sort
+titlesort <- sort(Movies$Title, decreasing = T)
+View(titlesort)
+#It returns the titles in an array form.
+print("End of Program")
 
-############## for loop #############################
-for(i in 1:5){
-  print(i)
-}
-
-x <- 1:10
-
-for(i in x){
-  print(i)
-}
-
-x <- letters
-for(i in x){
-  print(i)
-}
-
-# suppose we want the first five characters one at a time
-x <- letters
-y <- x[1:5]
-for(i in y){
-  print(i)
-}
-
-# While loop
-i <- 1
-while(i<=5){
-  print(i)
-  i<- i+1
-}
-
-############## User defined functions ########################
-sum = function(a, b){
-  c= a+b
-  return(c)
-}
-sum(2,5)
-sum(-7,9)
-sum(-12,0.5)
-
-mysum = function(x,y){
-  z <- x + y
-  return(z)
-}
-mysum(2,9)
-
-myfun = function(x){
-  y = x^2-1
-  return(y)
-}
-myfun(1)
